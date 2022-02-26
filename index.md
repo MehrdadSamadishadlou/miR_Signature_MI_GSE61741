@@ -1,37 +1,10 @@
-## Welcome to GitHub Pages
+## Finding a microRNA signature for Myocardial Infarction Diagnosis
 
-You can use the [editor on GitHub](https://github.com/MehrdadSamadishadlou/miR_Signature_MI_GSE61741/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+### What I want to do?
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Myocardial infarction is responsicle for 85% of mortalities of cardiovascular diseases, as the leading cause of mortality worldwide. There are different approches available for MI diagnosis including protein biomarkers. Biomarkers like cardiac troponins (cTn) are guiding treatment decisions for CVD and as a result of improved assays sensitivities, detection of minute changes in cTn levels became possible [2]. Therefore, for the first time, myocardial injury is defined as a different disease from myocardial infarction in the fourth universal definition of MI [3]. A drawback of the higher sensitivity is a higher possibility of false positives. In this respect, exploring new and novel biomarkers seem attractive. On the other hand, since the survival rate in MI cases strongly depends on fast diagnosis and treatment, discovering novel biomarkers for rapid and accurate diagnosis is of great importance [4].
 
-### Markdown
+Noncoding RNAs are under investigation as alternative and complementary biomarker candidates [2]. Amongst noncoding RNAs, microRNAs (miRNAs) are of particular interest, since they regulate key elements of gene expression, and various biological processes [5]. MicroRNAs are small (18–24 nucleotides) single-stranded noncoding RNAs that are of great importance in cardiac pathophysiologies, such as hypertrophy, arrhythmia, and ischemia. Therefore, microRNAs are under special attention as possible CVD biomarkers [6]. Although, further systematic investigations should be conducted on their potential as novel biomarkers for MI diagnosis.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+In the broader project, we aimed to identify a miRNA signature and manufacture a biosensor for thier detection in order to   diagnosing MI. This repository is related to the signature identification step. Before 
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/MehrdadSamadishadlou/miR_Signature_MI_GSE61741/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
