@@ -12,3 +12,10 @@ In the broader project, we aimed to identify a miRNA signature and manufacture a
 
 ## What I have done in this repository?
 
+This repository is dedicated to trainig a model for classification of samples with the lowest number of miRNAs as possible. To do so, at the first step, Random Forest and Gradiant Boost classifiers were selected because of thier well-known power in handeling tabular data.
+
+### Pre-Processing:
+
+The necessary libraries and the data have been loaded, and some minor edits have been made on the data. In the current format, '0' value in the SD column represents 'Healthy' and '1' represents 'MI'. In the begining the dataframe checked for highly corelataed features (> 0.8 or < -0.8) and nothing has been found. In order to visulizing the expression profile of all miRNAs, a boxplot is represented. ??. As it is clear from the boxplot, the data is not normalized and contain some outliers. 
+
+Question: Based on the boxplot, is normalization and outlier handeling needed?
