@@ -5,7 +5,7 @@
 <p style='text-align: justify;'>  
 
 Myocardial infarction is responsible for 85% of mortalities of cardiovascular diseases (CVD), as the leading cause of mortality worldwide. There are different approaches available for MI diagnosis including protein biomarkers. Biomarkers like cardiac troponins (cTn) are guiding treatment decisions for CVD and as a result of improved assay sensitivities, detection of minute changes in cTn levels became possible [2]. Therefore, for the first time, myocardial injury is defined as a different disease from myocardial infarction in the fourth universal definition of MI [3]. A drawback of the higher sensitivity is a higher possibility of false positives. In this respect, exploring new and novel biomarkers seems attractive. On the other hand, since the survival rate in MI cases strongly depends on fast diagnosis and treatment, discovering novel biomarkers for rapid and accurate diagnosis is of great importance [4].
-</p>
+
   
 Noncoding RNAs are under investigation as alternative and complementary biomarker candidates [2]. Amongst noncoding RNAs, microRNAs (miRNAs) are of particular interest, since they regulate key elements of gene expression, and various biological processes [5]. MicroRNAs are small (18–24 nucleotides) single-stranded noncoding RNAs that are of great importance in cardiac pathophysiologies, such as hypertrophy, arrhythmia, and ischemia. Therefore, microRNAs are under special attention as possible CVD biomarkers [6]. Although, further systematic investigations should be conducted on their potential as novel biomarkers for MI diagnosis.
 
@@ -35,3 +35,4 @@ In the begining the dataframe checked for highly corelataed features (> 0.8 or <
 
 A base random forest model has been trained using all 100 miRNAs. A list of 6 miRNAs has been extracted using *feature_importance_* and a random forest model hase been trained with their expression profile. For finding the best hyper parameters for the model a grid search has been conducted. 
 
+</p>
