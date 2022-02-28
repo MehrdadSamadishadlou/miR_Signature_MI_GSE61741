@@ -28,7 +28,7 @@ This repository is dedicated to trainig a model for classification of samples wi
 The necessary libraries and the data have been loaded, and some minor edits have been made on the data. In the current format, '0' value in the SD column represents Healthy and '1' represents MI.
 </p>
   
-> [**Question 1:**](## Questions:) As mentioned before there are 62 samples are available for MI and 94 samples for healthy group. Is this a imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege?
+> [**Question 1:**](#Questions:) As mentioned before there are 62 samples are available for MI and 94 samples for healthy group. Is this a imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege?
 
 <p style='text-align: justify;'> 
 In the begining the dataframe checked for highly corelataed features (> 0.8 or < -0.8) and nothing has been found. In order to visulizing the expression profile of all miRNAs, a boxplot is represented. ??. As it is clear from the boxplot, the data is not normalized and contain some outliers. 
@@ -46,5 +46,9 @@ In the begining the dataframe checked for highly corelataed features (> 0.8 or <
 A base random forest model has been trained using all 100 miRNAs. A list of 6 miRNAs has been extracted using *feature_importance_* and a random forest model hase been trained with their expression profile. For finding the best hyper parameters for the model a grid search has been conducted. 
 </p>
 
-
+<a name="Questions">
+  
 ## Questions:
+  
+</a>
+
