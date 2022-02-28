@@ -16,6 +16,11 @@ This repository is dedicated to trainig a model for classification of samples wi
 
 #### Pre-Processing:
 
-The necessary libraries and the data have been loaded, and some minor edits have been made on the data. In the current format, '0' value in the SD column represents 'Healthy' and '1' represents 'MI'. In the begining the dataframe checked for highly corelataed features (> 0.8 or < -0.8) and nothing has been found. In order to visulizing the expression profile of all miRNAs, a boxplot is represented. ??. As it is clear from the boxplot, the data is not normalized and contain some outliers. 
+The necessary libraries and the data have been loaded, and some minor edits have been made on the data. In the current format, '0' value in the SD column represents Healthy and '1' represents MI.
 
-**Question:** Based on the boxplot, is normalization and outlier handeling needed?
+> **1. Question:** As mentioned before there are 62 samples are available for MI and 94 samples for healthy group. Is this a imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege?
+
+In the begining the dataframe checked for highly corelataed features (> 0.8 or < -0.8) and nothing has been found. In order to visulizing the expression profile of all miRNAs, a boxplot is represented. ??. As it is clear from the boxplot, the data is not normalized and contain some outliers. 
+
+> **2. Question:** Based on the boxplot, is normalization and outlier handeling needed?
+
