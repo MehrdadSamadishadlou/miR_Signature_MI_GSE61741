@@ -52,3 +52,12 @@ A base random forest model has been trained using all 100 miRNAs. A list of 6 mi
   
 </a>
 
+|index|Model|No\. of miRs|test\_precision_macro|train\_precision_macro|test\_recall_macro|train\_recall_macro|test\_f1_macro|train\_f1_macro|test\_accuracy|train\_accuracy|
+|---|---|---|---|---|---|---|---|---|---|---|
+|0|Basic Random Forest|100|0\.6844300144300144|1\.0|0\.6860119047619048|1\.0|0\.664421101774043|1\.0|0\.7627272727272728|1\.0|
+|0|Basic Random Forest|6|0\.7232088744588745|1\.0|0\.7127976190476192|1\.0|0\.7013296580440543|1\.0|0\.7636363636363638|1\.0|
+|0|Random Forest Best parameters by Grid Search|100|0\.7426713564213564|1\.0|0\.6869047619047619|1\.0|0\.669257254183725|1\.0|0\.7627272727272729|1\.0|
+|0|Random Forest Best parameters by Grid Search|6|0\.7194642857142857|1\.0|0\.7151785714285713|1\.0|0\.7130631868131868|1\.0|0\.7454545454545455|1\.0|
+|0|Random Forest Best parameters by Grid Search \(one parameter at a time)|100|0\.6782467532467532|1\.0|0\.6279761904761905|1\.0|0\.6178431372549019|1\.0|0\.7081818181818182|1\.0|
+|0|Random Forest Best parameters by Grid Search|6|0\.7194642857142857|1\.0|0\.7151785714285713|1\.0|0\.7130631868131868|1\.0|0\.7454545454545455|1\.0|
+|0|Random Forest Nested CV|100|0\.7256313131313131|0\.9311934924182168|0\.7079365079365079|0\.8530518171344784|0\.6995301593831006|0\.8764355668318613|0\.77|0\.8991032776747062|
