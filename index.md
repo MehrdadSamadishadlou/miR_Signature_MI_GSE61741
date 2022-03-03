@@ -67,7 +67,11 @@ In order to test another approch for hyper-parameter tunning, a grid search on t
  </p> 
 
 <p style='text-align: justify;'> 
-  
+ At last a nested cross-validation has been conducted on the whole dataset with <code> n_splits=5 </code> for inner cv and <code> n_splits=10 </code> for outer cv. The <code> param_grid </code> was as above and the soring for the grid search step was accuracy. 
+ </p> 
+ 
+<p style='text-align: justify;'> 
+  All models have been trained with <code> cross_validate </code> with <code> cv=10 </code> and the following <code> scoring </code>:
  </p> 
 ## Questions:
 
