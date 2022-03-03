@@ -15,9 +15,13 @@ Noncoding RNAs are under investigation as alternative and complementary biomarke
 ## What I had done before this repository?
 
 <p style='text-align: justify;'> 
-In the broader project, we aimed to identify a miRNA signature and manufacture a biosensor for their detection to diagnose MI. This repository is related to the signature identification step. Before this step, The GSE6174 dataset includes the expression profile of 866 miRNAs for 1049 samples, from which 62 samples are acute ST-elevation myocardial infarction cases and 94 samples are healthy controls has been downloaded. In total, 100 differentially expressed miRNAs were detected in samples from MI patients in comparison to healthy controls at an adjusted significance level of p-value < 0.05 and log2 FC < -1 or > 1. Histogram plots of the log2 FC and the adjusted p-values are presented in Fig. 1a, b. From whole differentially expressed miRNAs, 68 were upregulated, while only 32 were downregulated in MI patients. The expression profile for all 100 differentially expressed miRNAs have been extracted for all samples.
+In the broader project, we aimed to identify a miRNA signature and manufacture a biosensor for their detection to diagnose MI. This repository is related to the signature identification step. Before this step, The GSE6174 dataset includes the expression profile of 866 miRNAs for 1049 samples, from which 62 samples are acute ST-elevation myocardial infarction cases and 94 samples are healthy controls has been downloaded. In total, 100 differentially expressed miRNAs were detected in samples from MI patients in comparison to healthy controls at an adjusted significance level of p-value < 0.05 and log2 FC < -1 or > 1. <a href="#Hist"> Histogram plots of the log2 FC and the adjusted p-values </a> are presented. From whole differentially expressed miRNAs, 68 were upregulated, while only 32 were downregulated in MI patients. The expression profile for all 100 differentially expressed miRNAs have been extracted for all samples.
 </p>
-  
+ 
+<p align="center">
+  <img id="Hist" src="https://user-images.githubusercontent.com/95024166/156620677-3358bb76-04eb-437c-b4cd-c95f796bca43.png" />
+</p>
+
 ## What I'm doing in this repository?
 
 <p style='text-align: justify;'> 
