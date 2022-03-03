@@ -16,7 +16,7 @@ Noncoding RNAs are under investigation as alternative and complementary biomarke
 In the broader project, we aimed to identify a miRNA signature and manufacture a biosensor for their detection to diagnose MI. This repository is related to the signature identification step. Before this step, The GSE6174 dataset includes the expression profile of 866 miRNAs for 1049 samples, from which 62 samples are acute ST-elevation myocardial infarction cases and 94 samples are healthy controls has been downloaded. In total, 100 differentially expressed miRNAs were detected in samples from MI patients in comparison to healthy controls at an adjusted significance level of p-value < 0.05 and log2 FC < -1 or > 1. Histogram plots of the log2 FC and the adjusted p-values are presented in Fig. 1a, b. From whole differentially expressed miRNAs, 68 were upregulated, while only 32 were downregulated in MI patients. The expression profile for all 100 differentially expressed miRNAs have been extracted for all samples.
 </p>
   
-### What I have done in this repository?
+### What I'm doing in this repository?
 
 <p style='text-align: justify;'> 
 This repository is dedicated to trainig a model for classification of samples with the lowest number of miRNAs as possible. To do so, at the first step, Random Forest and Gradiant Boost classifiers were selected because of thier well-known power in handeling tabular data.
@@ -27,8 +27,12 @@ This repository is dedicated to trainig a model for classification of samples wi
 <p style='text-align: justify;'> 
 The necessary libraries and the data have been loaded, and some minor edits have been made on the data. In the current format, '0' value in the SD column represents Healthy and '1' represents MI.
 </p>
-  
-> [**Question 1:**](#Questions:) As mentioned before there are 62 samples are available for MI and 94 samples for healthy group. Is this a imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege?
+
+```
+<p style='text-align: justify;'> 
+[**Question 1:**](#Questions:) As mentioned before there are 62 samples are available for MI and 94 samples for healthy group. Is this a imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege?
+</p>
+```
 
 <p style='text-align: justify;'> 
 In the begining the dataframe checked for highly corelataed features (> 0.8 or < -0.8) and nothing has been found. In order to visulizing the expression profile of all miRNAs, a boxplot is represented. ??. As it is clear from the boxplot, the data is not normalized and contain some outliers. 
@@ -36,21 +40,33 @@ In the begining the dataframe checked for highly corelataed features (> 0.8 or <
                                                                                       
 ![Expression Profile of 100 differentially Expressed MiRNAs](https://user-images.githubusercontent.com/95024166/155990729-5cddb914-0412-45d8-bf5a-a2ff7dd53e1f.png)
 
+```
+<p style='text-align: justify;'> 
 > **Question 2:** Based on the boxplot, is normalization and outlier handeling needed?
+ </p>
+```
 
 #### Training Models:
 
 ##### Random Forest:
 
 <p style='text-align: justify;'> 
-A base random forest model has been trained using all 100 miRNAs. A list of 6 miRNAs has been extracted using *feature_importance_* and a random forest model hase been trained with their expression profile. For finding the best hyper parameters for the model a grid search has been conducted. 
+A basic random forest model has been trained using all 100 miRNAs. A list of 6 miRNAs has been extracted using *feature_importance_* and a random forest model hase been trained with their expression profile. For finding the best hyper parameters for the model a grid search has been conducted. 
 </p>
 
-<a name="Questions">
+
+
   
 ## Questions:
-  
-</a>
+```
+<p style='text-align: justify;'> 
+1. As mentioned before there are 62 samples are available for MI and 94 samples for healthy group. Is this a imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege? </p>
+
+<p style='text-align: justify;'> 
+ 2. Based on the boxplot, is normalization and outlier handeling needed?
+</p>
+```
+
 
 |index|Model|No\. of miRs|test\_precision_macro|train\_precision_macro|test\_recall_macro|train\_recall_macro|test\_f1_macro|train\_f1_macro|test\_accuracy|train\_accuracy|
 |---|---|---|---|---|---|---|---|---|---|---|
