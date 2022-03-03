@@ -59,7 +59,8 @@ A basic random forest model has been trained using all 100 miRNAs. A list of 6 m
 
 <code>
 2. Based on the boxplot, is normalization and outlier handeling needed?
-  
+</code>
+
 
 |Model|No\. of miRs|test\_precision_macro|train\_precision_macro|test\_recall_macro|train\_recall_macro|test\_f1_macro|train\_f1_macro|test\_accuracy|train\_accuracy|
 |---|---|---|---|---|---|---|---|---|---|---|
