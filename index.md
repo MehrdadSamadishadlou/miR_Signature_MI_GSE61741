@@ -60,7 +60,7 @@ A basic random forest model has been trained using all 100 miRNAs. A list of 6 m
 
 
 |Model|No\. of miRs|test precision macro|train precision macro|test recall macro|train recall macro|test f1 macro|train f1 macro|test accuracy|train accuracy|
-|---|---|---|---|---|---|---|---|---|---|
+|--------|--|--|--|--|--|--|--|--|--|
 |Basic Random Forest|100|0\.684|1\.0|0\.686|1\.0|0\.664|1\.0|0\.762|1\.0|
 |Basic Random Forest|6|0\.723|1\.0|0\.712|1\.0|0\.701|1\.0|0\.763|1\.0|
 |Random Forest Best parameters by Grid Search|100|0\.742|1\.0|0\.686|1\.0|0\.669|1\.0|0\.762|1\.0|
