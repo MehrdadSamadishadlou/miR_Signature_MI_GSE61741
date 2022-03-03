@@ -1,4 +1,6 @@
-# Finding a MicroRNA Signature for Myocardial Infarction Diagnosis
+---
+title: Finding a MicroRNA Signature for Myocardial Infarction Diagnosis
+---
 
 ### What I want to do?
 
