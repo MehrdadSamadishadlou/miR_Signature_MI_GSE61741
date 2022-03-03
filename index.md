@@ -84,7 +84,7 @@ In order to test another approch for hyper-parameter tunning, a grid search on t
   </p> 
  
 |Model|No\. of miRs|test precision macro|train precision macro|test recall macro|train recall macro|test f1 macro|train f1 macro|test accuracy|train accuracy|
-|--------|--|--|--|--|--|--|--|--|--|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |Basic Random Forest|100|0\.684|1\.0|0\.686|1\.0|0\.664|1\.0|0\.762|1\.0|
 |Basic Random Forest|6|0\.723|1\.0|0\.712|1\.0|0\.701|1\.0|0\.763|1\.0|
 |Random Forest Best parameters by Grid Search|100|0\.742|1\.0|0\.686|1\.0|0\.669|1\.0|0\.762|1\.0|
@@ -124,7 +124,7 @@ param_grid = {
   </p> 
 
 |Model|No\. of miRs|test precision macro|train precision macro|test recall macro|train recall macro|test f1 macro|train f1 macro|test accuracy|train accuracy|
-|-------|--|--|--|--|--|--|--|--|--|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |Basic Gradiant Boost|100|0\.736|1\.0|0\.684|1\.0|0\.686|1\.0|0\.744|1\.0|
 |Basic Gradiant Boost|6|0\.789|1\.0|0\.735|1\.0|0\.733|1\.0|0\.771|1\.0|
 |Gradiant Boost Best parameters by Grid Search|100|0\.796|1\.0|0\.715|1\.0|0\.705|1\.0|0\.773|1\.0|
