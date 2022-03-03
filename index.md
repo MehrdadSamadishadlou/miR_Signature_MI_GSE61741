@@ -34,13 +34,14 @@ The necessary libraries and the data have been loaded, and some minor edits have
 
 
 <p style='text-align: justify;'> 
-In the begining the dataframe checked for highly corelataed features (> 0.8 or < -0.8) and nothing has been found. In order to visulizing the expression profile of all miRNAs, a boxplot is represented. ??. As it is clear from the boxplot, the data is not normalized and contain some outliers. 
+In the begining the dataframe checked for highly corelataed features (> 0.8 or < -0.8) and nothing has been found. In order to visulizing the expression profile of all miRNAs, a boxplot is represented. ??. As it is clear from the <a href="#boxplot"> boxplot </a>, the data is not normalized and contain some outliers. 
 </p>
-                                                                                      
-![Expression Profile of 100 differentially Expressed MiRNAs](https://user-images.githubusercontent.com/95024166/155990729-5cddb914-0412-45d8-bf5a-a2ff7dd53e1f.png)
 
+<p align="center">
+  <img id="boxplot" src="https://user-images.githubusercontent.com/95024166/155990729-5cddb914-0412-45d8-bf5a-a2ff7dd53e1f.png" />
+</p>
 
- **Question 2:** <code> Based on the boxplot, is normalization and outlier handeling needed? </code>
+ **Question 2:** <code> Based on the <a href="#RF"> boxplot </a>, is normalization and outlier handeling needed? </code>
 
 
 ### Training Models:
@@ -88,7 +89,7 @@ In order to test another approch for hyper-parameter tunning, a grid search on t
  scoring = ['precision_macro', 'recall_macro', 'f1_macro', 'accuracy']
  ```
  <p style='text-align: justify;'> 
- The metices in the scoring for both train and test data is represented in the following table, and also, a visiual comparison between different models scores on the test set is represented in the barplot.
+ The metices in the scoring for both train and test data is represented in the following table, and also, a visiual comparison between different models scores on the test set is represented in the following <a href="#RF"> barplot </a>.
   </p> 
  
 |Model|No\. of miRs|test precision macro|train precision macro|test recall macro|train recall macro|test f1 macro|train f1 macro|test accuracy|train accuracy|
@@ -102,7 +103,7 @@ In order to test another approch for hyper-parameter tunning, a grid search on t
 |Random Forest Nested CV|100|0\.725|0\.931|0\.707|0\.853|0\.699|0\.876|0\.77|0\.899|
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/95024166/156600735-1b5af45a-7bc9-446c-bd5a-b11f5f4d090e.png" />
+  <img id="RF" src="https://user-images.githubusercontent.com/95024166/156600735-1b5af45a-7bc9-446c-bd5a-b11f5f4d090e.png" />
 </p>
 
 #### Gradiant Boost:
@@ -128,7 +129,7 @@ param_grid = {
   </p> 
   
 <p style='text-align: justify;'> 
- The only difference between random forest and gradiant boost procidures is that in gradiant boost the nested cross-avlidation has not be conducted yet.
+ The only difference between random forest and gradiant boost procidures is that in gradiant boost the nested cross-avlidation has not be conducted yet. The results and a visual comparison of it are represented in the following table and <a href="#GB"> barplot </a>.
   </p> 
 
 |Model|No\. of miRs|test precision macro|train precision macro|test recall macro|train recall macro|test f1 macro|train f1 macro|test accuracy|train accuracy|
@@ -141,7 +142,7 @@ param_grid = {
 |Gradint Boost Best parameters by Grid Search \(one parameter at a time)|6|0\.662|1\.0|0\.661|1\.0|0\.656|1\.0|0\.708|1\.0|
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/95024166/156606040-f79b43ad-ded1-40b5-8ab8-0cb78b57e7a9.png" />
+  <img id="GB" src="https://user-images.githubusercontent.com/95024166/156606040-f79b43ad-ded1-40b5-8ab8-0cb78b57e7a9.png" />
 </p>
 
 ## Discussion:
@@ -152,7 +153,7 @@ The first
 ## Questions:
 
 1. As mentioned before there are 62 samples are available for MI and 94 samples for healthy group. Is this a imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege?
-2. Based on the boxplot, is normalization and outlier handeling needed?
+2. Based on the <a href="#boxplot"> boxplot </a>, is normalization and outlier handeling needed?
 3. As we will see in the following section <code> cross_validate </code> has been used for model training. When using this method, is it nessesary to split the data to train and test set? It seems that the method does it automatically and returen metrices for both train and test data seperatly. What about nested cross-validation?
 4. Three different approchs have been used for hyper-tunning. Grid search for all parameters of interest at one step, tunning a parameter at a time and nested cross-validation as combination of grid search and cross validation. Which hyper-tunning techniqu is the correct or the better one?
 
