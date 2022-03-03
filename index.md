@@ -28,7 +28,7 @@ This repository is dedicated to trainig a model for classification of samples wi
 The necessary libraries and the data have been loaded, and some minor edits have been made on the data. In the current format, '0' value in the SD column represents Healthy and '1' represents MI.
 </p>
 
-[**Question 1:**](#Questions:) <code> As mentioned before there are 62 samples are available for MI and 94 samples for healthy group. Is this a imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege? </code>
+[**Question 1:**](#Questions:) <code> As mentioned before there are 62 MI and 94 healthy samples. Is this an imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege? </code>
 
 
 <p style='text-align: justify;'> 
@@ -91,8 +91,50 @@ In order to test another approch for hyper-parameter tunning, a grid search on t
 |Random Forest Best parameters by Grid Search \(one parameter at a time)|6|0\.719|1\.0|0\.715|1\.0|0\.713|1\.0|0\.745|1\.0|
 |Random Forest Nested CV|100|0\.725|0\.931|0\.707|0\.853|0\.699|0\.876|0\.77|0\.899|
 
- 
- 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/95024166/156600735-1b5af45a-7bc9-446c-bd5a-b11f5f4d090e.png" />
+</p>
+
+##### Gradiant Boost:
+
+<p style='text-align: justify;'> 
+For gradiant boost algorithm, the exact same procedure as the procedure for random forest has been followed. The <code> param_grid </code> have used for grid search was as follow:
+  </p> 
+  
+  
+```
+param_grid = {
+    'loss' : ['deviance', 'exponential'],
+    'learning_rate' : [0.01, 0.1, 0.5],
+    'n_estimators' : [50, 100, 200, 300],
+    'criterion' : ['friedman_mse', 'squared_error', 'mse', 'mae'],
+    'max_depth' : [3, 6, 9, 15],
+    'max_features' : [2, 3, 4, 5, 6],
+}
+```
+
+<p style='text-align: justify;'> 
+  The grid search best parameters for the method that whole parameters are searching together were criterion='mae', max_depth=3, max_features=5, n_estimators=300, learning_rate=0.5, loss='exponential' and for grid search for one parameter at a time were criterion='friedman_mse', max_depth=3, max_features=3, n_estimators=200, learning_rate=0.1, loss='deviance'.
+  </p> 
+  
+<p style='text-align: justify;'> 
+ The onlt difference bitween random forest and gradiant bosst procidure is that in gradiant boost the nested cross-avlidation has not be conducted yet.
+  </p> 
+
+|Model|No\. of miRs|test precision macro|train precision macro|test recall macro|train recall macro|test f1 macro|train f1 macro|test accuracy|train accuracy|
+|-------|--|--|--|--|--|--|--|--|--|
+|Basic Gradiant Boost|100|0\.736|1\.0|0\.684|1\.0|0\.686|1\.0|0\.744|1\.0|
+|Basic Gradiant Boost|6|0\.789|1\.0|0\.735|1\.0|0\.733|1\.0|0\.771|1\.0|
+|Gradiant Boost Best parameters by Grid Search|100|0\.796|1\.0|0\.715|1\.0|0\.705|1\.0|0\.773|1\.0|
+|Gradiant Boost Best parameters by Grid Search|6|0\.671|0\.992|0\.684|0\.984|0\.663|0\.988|0\.715|0\.989|
+|Gradiant Boost Best parameters by Grid Search \(one parameter at a time)|100|0\.796|1\.0|0\.745|1\.0|0\.753|1\.0|0\.799|1\.0|
+|Gradint Boost Best parameters by Grid Search \(one parameter at a time)|6|0\.662|1\.0|0\.661|1\.0|0\.656|1\.0|0\.708|1\.0|
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/95024166/156606040-f79b43ad-ded1-40b5-8ab8-0cb78b57e7a9.png" />
+</p>
+
+
 ## Questions:
 
 1. As mentioned before there are 62 samples are available for MI and 94 samples for healthy group. Is this a imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege?
