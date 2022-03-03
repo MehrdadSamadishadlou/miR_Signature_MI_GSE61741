@@ -46,7 +46,7 @@ In the begining the dataframe checked for highly corelataed features (> 0.8 or <
 ##### Random Forest:
 
 <p style='text-align: justify;'> 
-A basic random forest model has been trained using all 100 miRNAs. A list of 6 miRNAs has been extracted using `feature_importance_` and a random forest model hase been trained with their expression profile. For finding the best hyper parameters for the model a grid search has been conducted. 
+A basic random forest model has been trained using all 100 miRNAs. A list of 6 miRNAs has been extracted using </p>`feature_importance_` <p style='text-align: justify;'> and a random forest model hase been trained with their expression profile. For finding the best hyper parameters for the model a grid search has been conducted. 
 </p>
 
 
