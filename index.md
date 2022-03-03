@@ -54,20 +54,17 @@ A basic random forest model has been trained using all 100 miRNAs. A list of 6 m
   
 ## Questions:
 
-<code>
 1. As mentioned before there are 62 samples are available for MI and 94 samples for healthy group. Is this a imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege?
-
-<code>
 2. Based on the boxplot, is normalization and outlier handeling needed?
-</code>
 
 
-|Model|No\. of miRs|test\_precision_macro|train\_precision_macro|test\_recall_macro|train\_recall_macro|test\_f1_macro|train\_f1_macro|test\_accuracy|train\_accuracy|
-|---|---|---|---|---|---|---|---|---|---|---|
+
+|Model|No\. of miRs|test precision macro|train precision macro|test recall macro|train recall macro|test f1 macro|train f1 macro|test accuracy|train accuracy|
+|---|---|---|---|---|---|---|---|---|---|
 |Basic Random Forest|100|0\.684|1\.0|0\.686|1\.0|0\.664|1\.0|0\.762|1\.0|
 |Basic Random Forest|6|0\.723|1\.0|0\.712|1\.0|0\.701|1\.0|0\.763|1\.0|
 |Random Forest Best parameters by Grid Search|100|0\.742|1\.0|0\.686|1\.0|0\.669|1\.0|0\.762|1\.0|
 |Random Forest Best parameters by Grid Search|6|0\.719|1\.0|0\.715|1\.0|0\.713|1\.0|0\.745|1\.0|
 |Random Forest Best parameters by Grid Search \(one parameter at a time)|100|0\.678|1\.0|0\.627|1\.0|0\.617|1\.0|0\.708|1\.0|
-|Random Forest Best parameters by Grid Search|6|0\.719|1\.0|0\.715|1\.0|0\.713|1\.0|0\.745|1\.0|
+|Random Forest Best parameters by Grid Search \(one parameter at a time)|6|0\.719|1\.0|0\.715|1\.0|0\.713|1\.0|0\.745|1\.0|
 |Random Forest Nested CV|100|0\.725|0\.931|0\.707|0\.853|0\.699|0\.876|0\.77|0\.899|
