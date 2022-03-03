@@ -28,7 +28,7 @@ This repository is dedicated to trainig a model for classification of samples wi
 The necessary libraries and the data have been loaded, and some minor edits have been made on the data. In the current format, '0' value in the SD column represents Healthy and '1' represents MI.
 </p>
 
-<code> [**Question 1:**](#Questions:) As mentioned before there are 62 samples are available for MI and 94 samples for healthy group. Is this a imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege? </code>
+[**Question 1:**](#Questions:) <code> As mentioned before there are 62 samples are available for MI and 94 samples for healthy group. Is this a imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege? </code>
 
 
 <p style='text-align: justify;'> 
@@ -38,7 +38,7 @@ In the begining the dataframe checked for highly corelataed features (> 0.8 or <
 ![Expression Profile of 100 differentially Expressed MiRNAs](https://user-images.githubusercontent.com/95024166/155990729-5cddb914-0412-45d8-bf5a-a2ff7dd53e1f.png)
 
 
-<code> **Question 2:** Based on the boxplot, is normalization and outlier handeling needed? </code>
+ **Question 2:** <code> Based on the boxplot, is normalization and outlier handeling needed? </code>
 
 
 #### Training Models:
@@ -56,18 +56,17 @@ A basic random forest model has been trained using all 100 miRNAs. A list of 6 m
 
 <code>
 1. As mentioned before there are 62 samples are available for MI and 94 samples for healthy group. Is this a imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege?
-</code>
 
 <code>
 2. Based on the boxplot, is normalization and outlier handeling needed?
-</code>
+  
 
-|index|Model|No\. of miRs|test\_precision_macro|train\_precision_macro|test\_recall_macro|train\_recall_macro|test\_f1_macro|train\_f1_macro|test\_accuracy|train\_accuracy|
+|Model|No\. of miRs|test\_precision_macro|train\_precision_macro|test\_recall_macro|train\_recall_macro|test\_f1_macro|train\_f1_macro|test\_accuracy|train\_accuracy|
 |---|---|---|---|---|---|---|---|---|---|---|
-|0|Basic Random Forest|100|0\.6844300144300144|1\.0|0\.6860119047619048|1\.0|0\.664421101774043|1\.0|0\.7627272727272728|1\.0|
-|0|Basic Random Forest|6|0\.7232088744588745|1\.0|0\.7127976190476192|1\.0|0\.7013296580440543|1\.0|0\.7636363636363638|1\.0|
-|0|Random Forest Best parameters by Grid Search|100|0\.7426713564213564|1\.0|0\.6869047619047619|1\.0|0\.669257254183725|1\.0|0\.7627272727272729|1\.0|
-|0|Random Forest Best parameters by Grid Search|6|0\.7194642857142857|1\.0|0\.7151785714285713|1\.0|0\.7130631868131868|1\.0|0\.7454545454545455|1\.0|
-|0|Random Forest Best parameters by Grid Search \(one parameter at a time)|100|0\.6782467532467532|1\.0|0\.6279761904761905|1\.0|0\.6178431372549019|1\.0|0\.7081818181818182|1\.0|
-|0|Random Forest Best parameters by Grid Search|6|0\.7194642857142857|1\.0|0\.7151785714285713|1\.0|0\.7130631868131868|1\.0|0\.7454545454545455|1\.0|
-|0|Random Forest Nested CV|100|0\.7256313131313131|0\.9311934924182168|0\.7079365079365079|0\.8530518171344784|0\.6995301593831006|0\.8764355668318613|0\.77|0\.8991032776747062|
+|Basic Random Forest|100|0\.684|1\.0|0\.686|1\.0|0\.664|1\.0|0\.762|1\.0|
+|Basic Random Forest|6|0\.723|1\.0|0\.712|1\.0|0\.701|1\.0|0\.763|1\.0|
+|Random Forest Best parameters by Grid Search|100|0\.742|1\.0|0\.686|1\.0|0\.669|1\.0|0\.762|1\.0|
+|Random Forest Best parameters by Grid Search|6|0\.719|1\.0|0\.715|1\.0|0\.713|1\.0|0\.745|1\.0|
+|Random Forest Best parameters by Grid Search \(one parameter at a time)|100|0\.678|1\.0|0\.627|1\.0|0\.617|1\.0|0\.708|1\.0|
+|Random Forest Best parameters by Grid Search|6|0\.719|1\.0|0\.715|1\.0|0\.713|1\.0|0\.745|1\.0|
+|Random Forest Nested CV|100|0\.725|0\.931|0\.707|0\.853|0\.699|0\.876|0\.77|0\.899|
