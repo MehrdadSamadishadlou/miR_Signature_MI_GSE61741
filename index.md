@@ -28,8 +28,7 @@ This repository is dedicated to trainig a model for classification of samples wi
 The necessary libraries and the data have been loaded, and some minor edits have been made on the data. In the current format, '0' value in the SD column represents Healthy and '1' represents MI.
 </p>
 
-<code> <p style='text-align: justify;'> 
-[**Question 1:**](#Questions:) As mentioned before there are 62 samples are available for MI and 94 samples for healthy group. Is this a imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege? </p> </code>
+<code> [**Question 1:**](#Questions:) As mentioned before there are 62 samples are available for MI and 94 samples for healthy group. Is this a imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege? </code>
 
 
 <p style='text-align: justify;'> 
@@ -38,11 +37,9 @@ In the begining the dataframe checked for highly corelataed features (> 0.8 or <
                                                                                       
 ![Expression Profile of 100 differentially Expressed MiRNAs](https://user-images.githubusercontent.com/95024166/155990729-5cddb914-0412-45d8-bf5a-a2ff7dd53e1f.png)
 
-```
-<p style='text-align: justify;'> 
-> **Question 2:** Based on the boxplot, is normalization and outlier handeling needed?
- </p>
-```
+
+<code> **Question 2:** Based on the boxplot, is normalization and outlier handeling needed? </code>
+
 
 #### Training Models:
 
@@ -56,15 +53,14 @@ A basic random forest model has been trained using all 100 miRNAs. A list of 6 m
 
   
 ## Questions:
-```
-<p style='text-align: justify;'> 
-1. As mentioned before there are 62 samples are available for MI and 94 samples for healthy group. Is this a imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege? </p>
 
-<p style='text-align: justify;'> 
- 2. Based on the boxplot, is normalization and outlier handeling needed?
-</p>
-```
+<code>
+1. As mentioned before there are 62 samples are available for MI and 94 samples for healthy group. Is this a imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege?
+</code>
 
+<code>
+2. Based on the boxplot, is normalization and outlier handeling needed?
+</code>
 
 |index|Model|No\. of miRs|test\_precision_macro|train\_precision_macro|test\_recall_macro|train\_recall_macro|test\_f1_macro|train\_f1_macro|test\_accuracy|train\_accuracy|
 |---|---|---|---|---|---|---|---|---|---|---|
