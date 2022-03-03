@@ -73,9 +73,12 @@ param_grid = {
 In order to test another approch for hyper-parameter tunning, a grid search on the whole dataset with one hyper-parameter in the <code> param_grid </code> at a time, while other parameters were left at their defult value. Every time the best value for the cheking parameter has been passed to a final model and at last, the model were traind with n_estimators=100, max_depth=9, max_features=6, criterion='entropy'. A model with the exact parameters has been trained with 6 miRNAs has with the highest <code> feature_importance_ </code> from the model trained with the whole dataset.
  </p> 
 
+
 <p style='text-align: justify;'> 
  At last a nested cross-validation has been conducted on the whole dataset with <code> n_splits=5 </code> for inner cv and <code> n_splits=10 </code> for outer cv. The <code> param_grid </code> was as above and the soring for the grid search step was accuracy. 
  </p> 
+ 
+ **Question 4:** <code> Three different approchs have been used for hyper-tunning. Grid search for all parameters of interest at one step, tunning a parameter at a time and nested cross-validation as combination of grid search and cross validation. Which hyper-tunning techniqu is the correct or the better one? </code>
  
 <p style='text-align: justify;'> 
   All models have been trained with <code> cross_validate </code> with <code> cv=10 </code> and the following <code> scoring </code>:
@@ -125,7 +128,7 @@ param_grid = {
   </p> 
   
 <p style='text-align: justify;'> 
- The onlt difference bitween random forest and gradiant bosst procidure is that in gradiant boost the nested cross-avlidation has not be conducted yet.
+ The only difference between random forest and gradiant boost procidures is that in gradiant boost the nested cross-avlidation has not be conducted yet.
   </p> 
 
 |Model|No\. of miRs|test precision macro|train precision macro|test recall macro|train recall macro|test f1 macro|train f1 macro|test accuracy|train accuracy|
@@ -141,12 +144,17 @@ param_grid = {
   <img src="https://user-images.githubusercontent.com/95024166/156606040-f79b43ad-ded1-40b5-8ab8-0cb78b57e7a9.png" />
 </p>
 
+## Discussion:
+
+The first 
+
 
 ## Questions:
 
 1. As mentioned before there are 62 samples are available for MI and 94 samples for healthy group. Is this a imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege?
 2. Based on the boxplot, is normalization and outlier handeling needed?
-3. 3. As we will see in the following section <code> cross_validate </code> has been used for model training. When using this method, is it nessesary to split the data to train and test set? It seems that the method does it automatically and returen metrices for both train and test data seperatly. What about nested cross-validation?
+3. As we will see in the following section <code> cross_validate </code> has been used for model training. When using this method, is it nessesary to split the data to train and test set? It seems that the method does it automatically and returen metrices for both train and test data seperatly. What about nested cross-validation?
+4. Three different approchs have been used for hyper-tunning. Grid search for all parameters of interest at one step, tunning a parameter at a time and nested cross-validation as combination of grid search and cross validation. Which hyper-tunning techniqu is the correct or the better one?
 
 
 
