@@ -46,12 +46,29 @@ In the begining the dataframe checked for highly corelataed features (> 0.8 or <
 ##### Random Forest:
 
 <p style='text-align: justify;'> 
-A basic random forest model has been trained using all 100 miRNAs. A list of 6 miRNAs has been extracted using <code> feature_importance_ </code> and a random forest model hase been trained with their expression profile. For finding the best hyper parameters for the model a grid search has been conducted. 
+A basic random forest model has been trained using all 100 miRNAs. A list of 6 miRNAs has with the highest <code> feature_importance_ </code> been extracted and a random forest model hase been trained with their expression profile. For finding the best hyper parameters for the model a grid search has been conducted with the following <code> param_grid </code> on all 100 miRNAs:
 </p>
 
+```
+param_grid = {
+    'n_estimators' : [50, 100, 200, 300],
+    'criterion' : ['gini', 'entropy'],
+    'max_depth' : [3, 6, 9, 15],
+    'max_features' : [2, 3, 4, 5, 6]
+}
+```
 
+<p style='text-align: justify;'> 
+  Scoring and k for cross validation has been set to accuracy and 10, repectivly. The best parameters for this grid search was n_estimators=100, max_depth=15, max_features=3, criterion='entropy'. Again 6 miRNAs has with the highest <code> feature_importance_ </code> been extracted and a random forest model hase been trained with their expression profile using above-mentioned hyper-parameters.
+</p>
 
+<p style='text-align: justify;'> 
+In order to test another approch for hyper-parameter tunning, a grid search on the whole dataset with one hyper-parameter in the <code> param_grid </code> at a time, while other parameters were left at their defult value. Every time the best value for the cheking parameter has been passed to a final model and at last, the model were traind with n_estimators=100, max_depth=9, max_features=6, criterion='entropy'. A model with the exact parameters has been trained with 6 miRNAs has with the highest <code> feature_importance_ </code> from the model trained with the whole dataset.
+ </p> 
+
+<p style='text-align: justify;'> 
   
+ </p> 
 ## Questions:
 
 1. As mentioned before there are 62 samples are available for MI and 94 samples for healthy group. Is this a imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege?
