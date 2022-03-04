@@ -25,20 +25,20 @@ In the broader project, we aimed to identify a miRNA signature and manufacture a
 ## What I'm doing in this repository?
 
 <p style='text-align: justify;'> 
-This repository is dedicated to trainig a model for classification of samples with the lowest number of miRNAs as possible. To do so, at the first step, Random Forest and Gradiant Boost classifiers were selected because of thier well-known power in handeling tabular data.
+This repository is about training a model for the classification of samples with the lowest number of miRNAs possible. To do so, at the first step, Random Forest and Gradient Boost classifiers were selected because of their well-known power in handling tabular data.
 </p>
   
 ### Pre-Processing:
 
 <p style='text-align: justify;'> 
-The necessary libraries and the data have been loaded, and some minor edits have been made on the data. In the current format, '0' value in the SD column represents Healthy and '1' represents MI.
+ The necessary libraries and the data have been loaded, and some minor edits have been made to the data. In the current format, the '0' value in the SD column represents Healthy and '1' represents MI. were selected because of their well-known power in handling tabular data.
 </p>
 
-[**Question 1:**](#Questions:) <code> As mentioned before there are 62 MI and 94 healthy samples. Is this an imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege? </code>
+<a href="#Questions"> **Question 1:** </a> <code> As mentioned before there are 62 samples are available for MI and 94 samples for the healthy group. Is this an imbalance data? Generally, what are the criteria for detecting balanced and imbalanced data? and what is the best approach for handling this challenge? </code>
 
 
 <p style='text-align: justify;'> 
-In the begining the dataframe checked for highly corelataed features (> 0.8 or < -0.8) and nothing has been found. In order to visulizing the expression profile of all miRNAs, a boxplot is represented. ??. As it is clear from the <a href="#boxplot"> boxplot </a>, the data is not normalized and contain some outliers. 
+In the beginning, the dataframe checked for highly correlated features (> 0.8 or < -0.8) and nothing has been found. To visualize the expression profile of all miRNAs, a boxplot is represented. ??. As it is clear from the <a href="#boxplot"> boxplot </a>, the data is not normalized and contain some outliers. 
 </p>
 
 <p align="center">
@@ -50,15 +50,15 @@ In the begining the dataframe checked for highly corelataed features (> 0.8 or <
 
 ### Training Models:
   
-The data has been split into train and test sets by 0.7:0.3 ratio. All mtrices have been calculated just by the train set.
+The data has been split into train and test sets by 0.7:0.3 ratio. All matrices have been calculated just by the train set.
 
- **Question 3:** <code> As we will see in the following section cross_validate has been used for model training. When using this method, is it nessesary to split the data to train and test set? It seems that the method does it automatically and returen metrices for both train and test data seperatly. What about nested cross-validation? </code>
+ **Question 3:** <code> As we will see in the following section cross_validate has been used for model training. When using this method, is it necessary to split the data to train and test set? It seems that the method does it automatically and return matrices for both train and test data separately. What about nested cross-validation? </code>
 
   
 #### Random Forest:
 
 <p style='text-align: justify;'> 
-A basic random forest model has been trained using all 100 miRNAs. A list of 6 miRNAs has with the highest <code> feature_importance_ </code> been extracted and a random forest model hase been trained with their expression profile. For finding the best hyper parameters for the model a grid search has been conducted with the following <code> param_grid </code> on all 100 miRNAs:
+A basic random forest model has been trained using all 100 miRNAs. A list of 6 miRNAs with the highest <code> feature_importance_ </code> has been extracted and a random forest model has been trained with their expression profile. For finding the best hyperparameters for the model a grid search has been conducted with the following <code> param_grid </code> on all 100 miRNAs:
 </p>
 
 ```
@@ -71,11 +71,11 @@ param_grid = {
 ```
 
 <p style='text-align: justify;'> 
-  Scoring and k for cross validation has been set to accuracy and 10, repectivly. The best parameters for this grid search was n_estimators=100, max_depth=15, max_features=3, criterion='entropy'. Again 6 miRNAs has with the highest <code> feature_importance_ </code> been extracted and a random forest model hase been trained with their expression profile using above-mentioned hyper-parameters.
+  Scoring and k for <code> cross validation </code> has been set to accuracy and 10, repectivly. The best parameters for this grid search was n_estimators=100, max_depth=15, max_features=3, criterion='entropy'. Again 6 miRNAs has with the highest <code> feature_importance_ </code> been extracted and a random forest model hase been trained with their expression profile using above-mentioned hyperparameters.
 </p>
 
 <p style='text-align: justify;'> 
-In order to test another approch for hyper-parameter tunning, a grid search on the whole dataset with one hyper-parameter in the <code> param_grid </code> at a time, while other parameters were left at their defult value. Every time the best value for the cheking parameter has been passed to a final model and at last, the model were traind with n_estimators=100, max_depth=9, max_features=6, criterion='entropy'. A model with the exact parameters has been trained with 6 miRNAs has with the highest <code> feature_importance_ </code> from the model trained with the whole dataset.
+To test another approach for hyperparameter tuning, a grid search has been conducted on the whole dataset with one hyperparameter tuning at a time (while other parameters were left at their default value). Every time the best value for the checking parameter has been passed to a final model and at last, the model was trained with n_estimators=100, max_depth=9, max_features=6, criterion='entropy'. A model with the exact parameters has been trained with 6 miRNAs with the highest <code> feature_importance_ </code> from the model trained with the whole dataset.
  </p> 
 
 
@@ -83,7 +83,7 @@ In order to test another approch for hyper-parameter tunning, a grid search on t
  At last a nested cross-validation has been conducted on the whole dataset with <code> n_splits=5 </code> for inner cv and <code> n_splits=10 </code> for outer cv. The <code> param_grid </code> was as above and the soring for the grid search step was accuracy. 
  </p> 
  
- **Question 4:** <code> Three different approchs have been used for hyper-tunning. Grid search for all parameters of interest at one step, tunning a parameter at a time and nested cross-validation as combination of grid search and cross validation. Which hyper-tunning techniqu is the correct or the better one? </code>
+ **Question 4:** <code> Three different approaches have been used for hyper-tunning. Grid search for all parameters of interest at one step, tunning a parameter at a time, and nested cross-validation as the combination of grid search and cross-validation. Which hyper-tunning technique is the correct or the better one? </code>
  
 <p style='text-align: justify;'> 
   All models have been trained with <code> cross_validate </code> with <code> cv=10 </code> and the following <code> scoring </code>:
@@ -113,7 +113,7 @@ In order to test another approch for hyper-parameter tunning, a grid search on t
 #### Gradiant Boost:
 
 <p style='text-align: justify;'> 
-For gradiant boost algorithm, the exact same procedure as the procedure for random forest has been followed. The <code> param_grid </code> have used for grid search was as follow:
+For the gradient boost algorithm, the same procedure as the procedure for random forest has been followed. The <code> param_grid </code> have used for grid search was as follow:
   </p> 
   
   
@@ -133,7 +133,7 @@ param_grid = {
   </p> 
   
 <p style='text-align: justify;'> 
- The only difference between random forest and gradiant boost procidures is that in gradiant boost the nested cross-avlidation has not be conducted yet. The results and a visual comparison of it are represented in the following table and <a href="#GB"> barplot </a>.
+ The only difference between random forest and gradient boost procedures is that in gradient boost the nested cross-validation has not been conducted yet. The results and a visual comparison of it are represented in the following table and <a href="#GB"> barplot </a>.
   </p> 
 
 |Model|No\. of miRs|test precision macro|train precision macro|test recall macro|train recall macro|test f1 macro|train f1 macro|test accuracy|train accuracy|
@@ -152,25 +152,34 @@ param_grid = {
 ## Discussion:
 
 <p style='text-align: justify;'> 
-  The first drawback of all models is the really strong <b> overfitting </b> in all models. It would be beacause of imbalanced data. Therefor, I should ask:
+  The first drawback of all models is the very high <b> overfitting </b> in all models. It would be because of imbalanced data. Therefore, I should ask:
 </p>
 
- **Question 5:** <code> What are the reasons of overfitting in all models? What is the solution to overcome this challenge? </code>
+ **Question 5:** <code> What are the reasons for overfitting in all models? What is the solution to overcome this challenge? </code>
  
 <p style='text-align: justify;'> 
- As it is clear from the <a href="#RF"> barplot </a> for random forest algorithm's metrices, in all three models which have been trained using all 100 miRNAs and 6 miRNAs with the highest <code> feature_importance_ </code>, the model trained by less features had the better performance. In contrast, it's except the basic gradiant boost model, the two other models had better performance using all features (<a href="#GB"> barplot </a> for gradiant boost algorithm's metrices). Hence, another question arises:
+ As it is clear from the <a href="#RF"> barplot </a> for random forest algorithm's matrices, in all three models which have been trained using all 100 miRNAs and 6 miRNAs with the highest <code> feature_importance_ </code>, the model trained by fewer features had the better performance. In contrast, it's except for the basic gradient boost model, the two other models had better performance using all features (<a href="#GB"> barplot </a> for gradient boost algorithm's matrices). Hence, another question arises:
   </p>
 
- **Question 6:** <code> Is it the best way to select features by their imortance score? What about using more advanced feature selection techniques like wrapper? </code>
+ **Question 6:** <code> Is it the best way to select features by their importance score? What about using more advanced feature selection techniques like wrapper? </code>
+
+<p style='text-align: justify;'> 
+  Moreover, using grid search for hyper tuning the random forest model lead to even lower scores in all matrices, while it is the opposite in gradient boost models. The only exception in nested cross-validation for the random forest that leads to better performance.
+ </p>
+ 
+ **Question 7:** <code> Why does grid search leads to even worth performance on random forest algorithm? Is it because of the values that are selected as the search area? And which of these three approaches is the best for hyper tuning? What about other techniques? </code>
+
 
 ## Questions:
+<div id="Questions">
 
-1. As mentioned before there are 62 samples are available for MI and 94 samples for healthy group. Is this a imbalence data? Generally what are the criteria for detecting balanced and imbalanced data? and what is the best approch for hadeling this challege?
+1. As mentioned before there are 62 samples are available for MI and 94 samples for the healthy group. Is this an imbalance data? Generally, what are the criteria for detecting balanced and imbalanced data? and what is the best approach for handling this challenge?
 2. Based on the <a href="#boxplot"> boxplot </a>, is normalization and outlier handeling needed?
-3. As we will see in the following section <code> cross_validate </code> has been used for model training. When using this method, is it nessesary to split the data to train and test set? It seems that the method does it automatically and returen metrices for both train and test data seperatly. What about nested cross-validation?
-4. Three different approchs have been used for hyper-tunning. Grid search for all parameters of interest at one step, tunning a parameter at a time and nested cross-validation as combination of grid search and cross validation. Which hyper-tunning techniqu is the correct or the better one?
-  5. What are the reasons of <b> overfitting </b> in all models? What is the solution to overcome this challenge?
-6. Is it the best way to select features by their imortance score? What about using more advanced feature selection techniques like <em> wrapper </em>?
+3. As we will see in the following section <code> cross_validate </code> has been used for model training. When using this method, is it necessary to split the data to train and test set? It seems that the method does it automatically and return matrices for both train and test data separately. What about nested cross-validation?
+4. Three different approaches have been used for hyper-tunning. Grid search for all parameters of interest at one step, tunning a parameter at a time, and nested cross-validation as the combination of grid search and cross-validation. Which hyper-tunning technique is the correct or the better one?
+5. What are the reasons of <b> overfitting </b> in all models? What is the solution to overcome this challenge?
+6. Is it the best way to select features by their importance score? What about using more advanced feature selection techniques like <em> wrapper </em>?
+7. Why does grid search leads to even worth performance on random forest algorithm? Is it because of the values that are selected as the search area? And which of these three approaches is the best for hyper tuning? What about other techniques?
 
 
 
