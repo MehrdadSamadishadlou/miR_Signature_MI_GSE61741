@@ -45,14 +45,14 @@ In the beginning, the dataframe checked for highly correlated features (> 0.8 or
   <img id="boxplot" src="https://user-images.githubusercontent.com/95024166/155990729-5cddb914-0412-45d8-bf5a-a2ff7dd53e1f.png" />
 </p>
 
- **Question 2:** <code> Based on the <a href="#RF"> boxplot </a>, is normalization and outlier handeling needed? </code>
+<a href="#Questions"> **Question 2:** </a> <code> Based on the <a href="#RF"> boxplot </a>, is normalization and outlier handeling needed? </code>
 
 
 ### Training Models:
   
 The data has been split into train and test sets by 0.7:0.3 ratio. All matrices have been calculated just by the train set.
 
- **Question 3:** <code> As we will see in the following section cross_validate has been used for model training. When using this method, is it necessary to split the data to train and test set? It seems that the method does it automatically and return matrices for both train and test data separately. What about nested cross-validation? </code>
+ <a href="#Questions"> **Question 3:** </a> <code> As we will see in the following section cross_validate has been used for model training. When using this method, is it necessary to split the data to train and test set? It seems that the method does it automatically and return matrices for both train and test data separately. What about nested cross-validation? </code>
 
   
 #### Random Forest:
@@ -83,7 +83,7 @@ To test another approach for hyperparameter tuning, a grid search has been condu
  At last a nested cross-validation has been conducted on the whole dataset with <code> n_splits=5 </code> for inner cv and <code> n_splits=10 </code> for outer cv. The <code> param_grid </code> was as above and the soring for the grid search step was accuracy. 
  </p> 
  
- **Question 4:** <code> Three different approaches have been used for hyper-tunning. Grid search for all parameters of interest at one step, tunning a parameter at a time, and nested cross-validation as the combination of grid search and cross-validation. Which hyper-tunning technique is the correct or the better one? </code>
+<a href="#Questions"> **Question 4:** </a> <code> Three different approaches have been used for hyper-tunning. Grid search for all parameters of interest at one step, tunning a parameter at a time, and nested cross-validation as the combination of grid search and cross-validation. Which hyper-tunning technique is the correct or the better one? </code>
  
 <p style='text-align: justify;'> 
   All models have been trained with <code> cross_validate </code> with <code> cv=10 </code> and the following <code> scoring </code>:
@@ -155,23 +155,24 @@ param_grid = {
   The first drawback of all models is the very high <b> overfitting </b> in all models. It would be because of imbalanced data. Therefore, I should ask:
 </p>
 
- **Question 5:** <code> What are the reasons for overfitting in all models? What is the solution to overcome this challenge? </code>
+<a href="#Questions"> **Question 5:** </a> <code> What are the reasons for overfitting in all models? What is the solution to overcome this challenge? </code>
  
 <p style='text-align: justify;'> 
  As it is clear from the <a href="#RF"> barplot </a> for random forest algorithm's matrices, in all three models which have been trained using all 100 miRNAs and 6 miRNAs with the highest <code> feature_importance_ </code>, the model trained by fewer features had the better performance. In contrast, it's except for the basic gradient boost model, the two other models had better performance using all features (<a href="#GB"> barplot </a> for gradient boost algorithm's matrices). Hence, another question arises:
   </p>
 
- **Question 6:** <code> Is it the best way to select features by their importance score? What about using more advanced feature selection techniques like wrapper? </code>
+<a href="#Questions"> **Question 6:** </a> <code> Is it the best way to select features by their importance score? What about using more advanced feature selection techniques like wrapper? </code>
 
 <p style='text-align: justify;'> 
   Moreover, using grid search for hyper tuning the random forest model lead to even lower scores in all matrices, while it is the opposite in gradient boost models. The only exception in nested cross-validation for the random forest that leads to better performance.
  </p>
  
- **Question 7:** <code> Why does grid search leads to even worth performance on random forest algorithm? Is it because of the values that are selected as the search area? And which of these three approaches is the best for hyper tuning? What about other techniques? </code>
+<a href="#Questions"> **Question 7:** </a> <code> Why does grid search leads to even worth performance on random forest algorithm? Is it because of the values that are selected as the search area? And which of these three approaches is the best for hyper tuning? What about other techniques? </code>
 
 
 ## Questions:
 <div id="Questions">
+</div>
 
 1. As mentioned before there are 62 samples are available for MI and 94 samples for the healthy group. Is this an imbalance data? Generally, what are the criteria for detecting balanced and imbalanced data? and what is the best approach for handling this challenge?
 2. Based on the <a href="#boxplot"> boxplot </a>, is normalization and outlier handeling needed?
