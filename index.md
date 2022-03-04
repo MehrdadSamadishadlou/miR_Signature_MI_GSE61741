@@ -151,8 +151,17 @@ param_grid = {
 
 ## Discussion:
 
-The first 
+<p style='text-align: justify;'> 
+  The first drawback of all models is the really strong <b> overfitting </b> in all models. It would be beacause of imbalanced data. Therefor, I should ask:
+</p>
 
+ **Question 5:** <code> What are the reasons of overfitting in all models? What is the solution to overcome this challenge? </code>
+ 
+<p style='text-align: justify;'> 
+ As it is clear from the <a href="#RF"> barplot </a> for random forest algorithm's metrices, in all three models which have been trained using all 100 miRNAs and 6 miRNAs with the highest <code> feature_importance_ </code>, the model trained by less features had the better performance. In contrast, it's except the basic gradiant boost model, the two other models had better performance using all features (<a href="#GB"> barplot </a> for gradiant boost algorithm's metrices). Hence, another question arises:
+  </p>
+
+ **Question 6:** <code> Is it the best way to select features by their imortance score? What about using more advanced feature selection techniques like wrapper? </code>
 
 ## Questions:
 
@@ -160,6 +169,8 @@ The first
 2. Based on the <a href="#boxplot"> boxplot </a>, is normalization and outlier handeling needed?
 3. As we will see in the following section <code> cross_validate </code> has been used for model training. When using this method, is it nessesary to split the data to train and test set? It seems that the method does it automatically and returen metrices for both train and test data seperatly. What about nested cross-validation?
 4. Three different approchs have been used for hyper-tunning. Grid search for all parameters of interest at one step, tunning a parameter at a time and nested cross-validation as combination of grid search and cross validation. Which hyper-tunning techniqu is the correct or the better one?
+  5. What are the reasons of <b> overfitting </b> in all models? What is the solution to overcome this challenge?
+6. Is it the best way to select features by their imortance score? What about using more advanced feature selection techniques like <em> wrapper </em>?
 
 
 
