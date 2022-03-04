@@ -45,7 +45,7 @@ In the beginning, the dataframe checked for highly correlated features (> 0.8 or
   <img id="boxplot" src="https://user-images.githubusercontent.com/95024166/155990729-5cddb914-0412-45d8-bf5a-a2ff7dd53e1f.png" />
 </p>
 
-<a href="#Questions"> **Question 2:** </a> <code> Based on the <a href="#RF"> boxplot </a>, is normalization and outlier handeling needed? </code>
+<a href="#Questions"> **Question 2:** </a> <code> Based on the <a href="#RF"> boxplot, </a> is normalization and outlier handeling needed? </code>
 
 
 ### Training Models:
