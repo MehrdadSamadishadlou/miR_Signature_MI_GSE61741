@@ -181,8 +181,8 @@ param_grid = {
 2. Based on the <a href="#boxplot"> boxplot </a>, is normalization and outlier handeling needed?
 3. As we will see in the following section <code> cross_validate </code> has been used for model training. When using this method, is it necessary to split the data to train and test set? It seems that the method does it automatically and return matrices for both train and test data separately. What about nested cross-validation?
 4. Three different approaches have been used for hyper-tunning. Grid search for all parameters of interest at one step, tunning a parameter at a time, and nested cross-validation as the combination of grid search and cross-validation. Which hyper-tunning technique is the correct or the better one?
-5. What are the reasons of <b> overfitting </b> in all models? What is the solution to overcome this challenge?
-6. Is it the best way to select features by their importance score? What about using more advanced feature selection techniques like <em> wrapper </em>?
+5. What are the reasons of overfitting in all models? What is the solution to overcome this challenge?
+6. Is it the best way to select features by their importance score? What about using more advanced feature selection techniques like wrapper?
 7. Why does grid search leads to even worth performance on random forest algorithm? Is it because of the values that are selected as the search area? And which of these three approaches is the best for hyper tuning? What about other techniques?
 
 
