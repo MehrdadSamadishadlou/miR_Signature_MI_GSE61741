@@ -185,11 +185,3 @@ param_grid = {
 6. Is it the best way to select features by their importance score? What about using more advanced feature selection techniques like wrapper?
 7. Why does grid search leads to even worth performance on random forest algorithm? Is it because of the values that are selected as the search area? And which of these three approaches is the best for hyper tuning? What about other techniques?
 
-
-<script src="https://utteranc.es/client.js"
-        repo="[MehrdadSamadishadlou/miR_Signature_MI_GSE61741]"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
