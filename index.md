@@ -96,9 +96,10 @@ To test another approach for hyperparameter tuning, a grid search has been condu
  The metices in the scoring for both train and test data is represented in the following table, and also, a visiual comparison between different models scores on the test set is represented in the following <a href="#RF"> barplot </a>.
   </p> 
 
-<table style="width:100%; border: 1px solid black">
+
+
 |Model|No\. of miRs|test precision macro|train precision macro|test recall macro|train recall macro|test f1 macro|train f1 macro|test accuracy|train accuracy|
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|:---:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 |Basic Random Forest|100|0\.684|1\.0|0\.686|1\.0|0\.664|1\.0|0\.762|1\.0|
 |Basic Random Forest|6|0\.723|1\.0|0\.712|1\.0|0\.701|1\.0|0\.763|1\.0|
 |Random Forest Best parameters by Grid Search|100|0\.742|1\.0|0\.686|1\.0|0\.669|1\.0|0\.762|1\.0|
@@ -106,7 +107,7 @@ To test another approach for hyperparameter tuning, a grid search has been condu
 |Random Forest Best parameters by Grid Search \(one parameter at a time)|100|0\.678|1\.0|0\.627|1\.0|0\.617|1\.0|0\.708|1\.0|
 |Random Forest Best parameters by Grid Search \(one parameter at a time)|6|0\.719|1\.0|0\.715|1\.0|0\.713|1\.0|0\.745|1\.0|
 |Random Forest Nested CV|100|0\.725|0\.931|0\.707|0\.853|0\.699|0\.876|0\.77|0\.899|
-</table>
+
   
 <p align="center">
   <img id="RF" src="https://user-images.githubusercontent.com/95024166/156600735-1b5af45a-7bc9-446c-bd5a-b11f5f4d090e.png" />
@@ -139,7 +140,7 @@ param_grid = {
   </p> 
 
 |Model|No\. of miRs|test precision macro|train precision macro|test recall macro|train recall macro|test f1 macro|train f1 macro|test accuracy|train accuracy|
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|:---:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 |Basic Gradiant Boost|100|0\.736|1\.0|0\.684|1\.0|0\.686|1\.0|0\.744|1\.0|
 |Basic Gradiant Boost|6|0\.789|1\.0|0\.735|1\.0|0\.733|1\.0|0\.771|1\.0|
 |Gradiant Boost Best parameters by Grid Search|100|0\.796|1\.0|0\.715|1\.0|0\.705|1\.0|0\.773|1\.0|
